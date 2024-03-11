@@ -1,7 +1,32 @@
-﻿namespace XTA.Tests
+﻿using Xunit;
+
+namespace XTA.Tests
 {
     public class CalculatorTest
     {
+        // Calculator is static so no need for constructor
 
+        // A "Fact" in xunit is like saying that a test is always true. More importantly they don't take any parameters and their
+        // purpose is testing invariant conditions (test environment,execution order, things related to the test class itself and not the actual tests)
+
+        [Fact]
+        public void Add()
+        {
+            double a = 420;
+            double b = 69;
+            double expected = 489;
+            var actual = Calculator.Add(a, b);
+            Assert.Equal(expected, actual,0); // 3rd value is tolerance meaning difference.
+        }
+
+        [Fact]
+        public void Subtract()
+        {
+            double a = 2;
+            double b = 1;
+            double expected = 1;
+            var actual = Calculator.Subtract(a, b);
+            Assert.Equal(expected, actual, 0); // 3rd value is tolerance meaning difference.
+        }
     }
 }

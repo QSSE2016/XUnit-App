@@ -103,6 +103,19 @@
         "build": {
           "build/net6.0/xunit.runner.visualstudio.props": {}
         }
+      },
+      "XTA/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/XTA.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/XTA.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -356,10 +369,16 @@
         "xunit.runner.visualstudio.2.5.7.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "XTA/1.0.0": {
+      "type": "project",
+      "path": "../XTA/XTA.csproj",
+      "msbuildProject": "../XTA/XTA.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "XTA >= 1.0.0",
       "xunit >= 2.7.0",
       "xunit.runner.console >= 2.7.0",
       "xunit.runner.visualstudio >= 2.5.7"
@@ -396,7 +415,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ma dude\\OneDrive\\Υπολογιστής\\Programming\\asp\\XTA\\XTA\\XTA.csproj": {
+              "projectPath": "C:\\Users\\ma dude\\OneDrive\\Υπολογιστής\\Programming\\asp\\XTA\\XTA\\XTA.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
