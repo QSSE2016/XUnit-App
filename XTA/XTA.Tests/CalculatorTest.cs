@@ -42,5 +42,31 @@ namespace XTA.Tests
             Assert.Equal(expected, value,0);
         }
 
+
+        // Here we have a test that is always skipped. If you add the Skip attribute with whatever description you want, it skips the test.
+        // If you want a specific skip condition you should specify with SkipOn and then write some code in the function. The actual values of these attributes
+        // doesn't actually matter. You can skip any test you want by specifying Skip or SkipOn.
+
+
+        [Fact(Skip = "This is a test that is always skipped. Why? I don't know. But i don't like it.")]
+        public void MultiplySkipped()
+        {
+            double a = 1;
+            double b = 0;
+            double expected = 0;
+            var actual = Calculator.Multiply(a, b);
+            Assert.Equal(expected , actual, 0);
+        }
+
+        // I feel bad for skipping Multiply above,so we will do it here.
+
+        [Theory(DisplayName = "A*B baby")]
+        [InlineData(5,3,15)]
+        public void Multiply(double a,double b,double expected)
+        {
+            var actual = Calculator.Multiply(a, b);
+            Assert.Equal(expected, actual, 0);
+        }
+
     }
 }
